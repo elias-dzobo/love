@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title>Eclipse</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Tap to start overlay -->
+  <div id="start-screen">
+    <div class="start-content">
+      <div class="start-glow"></div>
+      <p class="start-text">Tap to begin</p>
+    </div>
+  </div>
+
+  <!-- Main experience container -->
+  <div id="app" class="hidden">
+    <!-- Scene: The Void -->
+    <div id="scene-void" class="scene">
+      <div class="void-container">
+        <div class="void-glow"></div>
+        <div class="void-particles"></div>
+      </div>
+    </div>
+
+    <!-- Scene: Character -->
+    <div id="scene-character" class="scene">
+      <div id="character-animation" class="animation-container"></div>
+    </div>
+
+    <!-- Scene: Door -->
+    <div id="scene-door" class="scene">
+      <div id="door-animation" class="animation-container"></div>
+    </div>
+
+    <!-- Scene: White Transition -->
+    <div id="scene-transition" class="scene transition-flash"></div>
+
+    <!-- Scene: Paradise -->
+    <div id="scene-paradise" class="scene">
+      <div class="paradise-bg"></div>
+      <div class="paradise-overlay"></div>
+      <div id="butterflies-animation" class="animation-container"></div>
+    </div>
+
+    <!-- Scene: Celebration -->
+    <div id="scene-celebration" class="scene">
+      <div class="paradise-bg"></div>
+      <div id="celebration-butterflies" class="animation-container"></div>
+      <div class="hearts-container"></div>
+    </div>
+
+    <!-- Text Overlay Layer -->
+    <div id="text-overlay">
+      <div id="speech-bubble">
+        <p id="speech-text"></p>
+      </div>
+    </div>
+
+    <!-- Button Layer -->
+    <div id="button-layer">
+      <button id="yes-button" class="hidden">YES</button>
+      <button id="continue-button" class="hidden">
+        <span class="continue-icon">↓</span>
+      </button>
+    </div>
+
+    <!-- Curtain -->
+    <div id="curtain">
+      <div class="curtain-left"></div>
+      <div class="curtain-right"></div>
+    </div>
+
+    <!-- Love Letter (final reveal) - Scrollable -->
+    <div id="love-letter" class="hidden">
+      <div class="letter-scroll">
+        <div class="letter-content">
+          <div class="letter-header">A letter for you</div>
+          
+          <div class="letter-body" id="letter-text">
+            <!-- Will be filled dynamically -->
+          </div>
+          
+          <div class="letter-signature" id="letter-signature"></div>
+          
+          <!-- Video Memories Section -->
+          <div class="memories-section" id="memories-section">
+            <div class="memories-header">Our Memories</div>
+            <div class="video-gallery" id="video-gallery">
+              <!-- Videos will be added here -->
+            </div>
+          </div>
+          
+          <!-- Photos Section -->
+          <div class="letter-photos" id="letter-photos">
+            <!-- Photos will be added here -->
+          </div>
+          
+          <div class="letter-footer">
+            <span class="heart-icon">❤️</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Photo Burst (on YES click) -->
+    <div id="photo-burst" class="hidden"></div>
+  </div>
+
+  <!-- Audio Elements -->
+  <audio id="ordinary-audio" preload="auto" loop>
+    <source src="assets/audio/ordinary.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="ambient-audio" preload="auto" loop>
+    <source src="assets/audio/ambient.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="celebration-audio" preload="auto">
+    <source src="assets/audio/celebration.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Lottie Library -->
+  <script src="https://unpkg.com/lottie-web@5.12.2/build/player/lottie.min.js"></script>
+  
+  <!-- App Scripts -->
+  <script src="js/stateManager.js"></script>
+  <script src="js/animationController.js"></script>
+  <script src="js/audioController.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
